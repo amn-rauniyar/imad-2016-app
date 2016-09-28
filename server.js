@@ -46,6 +46,7 @@ var template=`
             </h3>
             <div>
                 ${time}
+                ${time}
             </div>
                 <div class="container">
                ${content}
