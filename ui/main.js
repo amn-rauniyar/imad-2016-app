@@ -8,9 +8,9 @@ element.innerHTML='New value';
 var img=document.getElementById('madi');
 var marginLeft=0;
 function moveright(){
-    marginLeft=marginLeft+20;
+    marginLeft=marginLeft + 10;
     img.style.margin=marginLeft + 'px';
 }
 img.onclick=function(){
-    var interval=setInterval(moveright,100);
+    var interval=setInterval(moveright,200);
 };
