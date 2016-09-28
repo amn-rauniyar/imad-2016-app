@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var articles={
 var articleone={
     title:'Article-One',
     heading:'Article',
@@ -16,9 +16,27 @@ var articleone={
                 
                   <p>
                     Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!
-                </p>
+                </p>`
     `
-};
+},
+var articletwo={
+     title:'Article-Two',
+    heading:'Article',
+    time:'30th Seppt',
+    content:`
+    <p>
+                    Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!
+                </p>
+                  <p>
+                    Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!
+                </p>
+                
+                  <p>
+                    Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!
+                </p>`
+}
+}
+;
 function createTemp(data){
  var title=data.title;
  var heading=data.heading;
@@ -75,13 +93,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article1', function (req, res){
-    res.send(createTemp(articleone));
+app.get('/:articlename', function (req, res){
+    var articlename=req.param.articlename;
+    res.send(createTemp(articles[articlename]));
     
-});
-
-app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
 });
 
 
