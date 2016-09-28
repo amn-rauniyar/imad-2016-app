@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var articles={
-var articleone={
+'articleone':{
     title:'Article-One',
     heading:'Article',
     time:'29th Seppt',
@@ -17,9 +17,8 @@ var articleone={
                   <p>
                     Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!! Welcome to page 2 hello how are you??!!
                 </p>`
-    `
 },
-var articletwo={
+'articletwo':{
      title:'Article-Two',
     heading:'Article',
     time:'30th Seppt',
@@ -94,7 +93,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/:articlename', function (req, res){
-    var articlename=req.param.articlename;
+    var articlename=req.params.articlename;
     res.send(createTemp(articles[articlename]));
     
 });
