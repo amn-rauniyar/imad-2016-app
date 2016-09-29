@@ -19,7 +19,3 @@ for(var i=0;i<names.length;i++){
 var ul=document.getElementById('namelist');
 ul.innerHTML = list;
 };
-var img=document.getElementById('madi');
-img.onclick=function(){
-  img.style.leftMargin='100px';  
-};
